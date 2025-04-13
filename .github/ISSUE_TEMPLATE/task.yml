@@ -1,0 +1,51 @@
+name: Task
+description: 새로운 작업 항목(issue)을 작성합니다.
+title: "[type] 작업 제목"
+labels: []
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 📝 작업 요약
+      description: 어떤 작업을 진행할 건가요?
+      placeholder: ex. 장소 검색 기능에서 입력 필드와 API 연결을 구현한다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: 🔍 세부 내용
+      description: 필요한 세부 작업이나 참고할 만한 정보가 있다면 여기에 적어주세요.
+      placeholder: |
+        - Google Maps Places API 사용 예정
+        - 키워드 입력 debounce 적용
+    validations:
+      required: false
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: 📦 작업 타입
+      options:
+        - type:page
+        - type:component
+        - type:api
+        - type:ddl
+        - type:ui
+        - type:refactor
+        - type:bug
+        - type:doc
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 🚦 우선순위
+      options:
+        - priority:high
+        - priority:middle
+        - priority:low
+    validations:
+      required: false
